@@ -6,9 +6,8 @@ depth 10
 smtbmc boolector
 
 [script]
-read -formal counter.sv tb_counter.v
-prep -top tb_counter
+read -formal counter.sv
+prep -top counter
 
 [files]
 counter.sv
-tb_counter.v
