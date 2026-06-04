@@ -1,0 +1,15 @@
+[options]
+mode bmc
+depth 20
+
+[engines]
+smtbmc boolector
+
+[script]
+read -sv spi_master.sv
+read -formal spi_fv.sv
+prep -top spi_fv
+
+[files]
+spi_master.sv
+spi_fv.sv
