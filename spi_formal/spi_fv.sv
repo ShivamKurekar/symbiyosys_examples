@@ -29,7 +29,7 @@ spi_master master (
 always @(posedge clk) begin
     if (!reset) begin
         assert(state != 3'd6);
-        cover(state == 3'd6);
+        cover(state == 3'd5);
     end
 end
 
