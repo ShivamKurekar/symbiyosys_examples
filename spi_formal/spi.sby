@@ -5,11 +5,11 @@ cover
 [options]
 prove:
 mode prove
-depth 20
+depth 30
 --
 cover: 
 mode cover
-depth 22
+depth 30
 --
 
 [engines]

@@ -26,8 +26,20 @@ spi_master master (
     .o_state(state)
 );
 
+reg past_valid;
+
+always_ff @(posedge clk) begin
+    past_valid <= (reset)? 0: 1; 
+end
+
 always @(posedge clk) begin
-    if (!reset) begin
+    if (past_valid) begin
+        assume(!reset);
+    end
+end
+
+always @(posedge clk) begin
+    if (past_valid) begin
         assert(state != 3'd6);
         cover(state == 3'd5);
     end
