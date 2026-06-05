@@ -1,11 +1,15 @@
 [tasks]
+bmc
 prove 
 cover
 
 [options]
+bmc:
+mode bmc
+depth 100
+--
 prove:
 mode prove
-depth 30
 --
 cover: 
 mode cover
