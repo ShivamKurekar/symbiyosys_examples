@@ -44,11 +44,13 @@ reg [2:0] count;    // Counts transmitted bits
 always @(posedge clk)
 begin
 
-    if (reset == 1)
+    if (reset == 1) begin
         state <= S5;
-
-    else
-    begin
+        SCLK <= 0;
+        MOSI <= 0;
+        SS <= 1;
+        
+    end else begin
         case (state)
 
             S0 :
