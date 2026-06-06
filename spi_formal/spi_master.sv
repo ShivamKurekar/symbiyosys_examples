@@ -158,10 +158,4 @@ begin
     end
 end
 
-
-// `ifdef FORMAL
-//     always@(*)
-//         cover(state != 8);
-// `endif
-
 endmodule
