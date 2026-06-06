@@ -45,11 +45,16 @@ always @(posedge clk)
 begin
 
     if (reset == 1) begin
-        state <= S5;
-        SCLK <= 0;
-        MOSI <= 0;
-        SS <= 1;
-        
+        state <= S0;
+        if (mode[1] == 0)
+            SCLK = 0;
+        else
+            SCLK = 1;
+
+        MOSI  = 1'b0;
+        SS    = 1;
+        count = 0;
+
     end else begin
         case (state)
 
