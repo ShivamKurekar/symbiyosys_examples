@@ -24,7 +24,6 @@ spi_master master (
     .o_state(state)
 );
 
-// Infrastructure
 reg past_valid;
 always_ff @(posedge clk) begin
     if (reset) past_valid <= 1'b0;
@@ -92,11 +91,10 @@ end
 always_ff @(posedge clk) begin
     if (past_valid) begin
         assert (state != 3'd6);
-        cover  (state == 3'd5);
+        cover  (state == 3'd4);
     end
 end
 
-// Data Stability Capture
 reg [1:0] sample_posedge_r;
 reg [1:0] sample_negedge_r;
 
